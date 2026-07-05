@@ -125,5 +125,97 @@
       <span>Aulas</span>
     </a>
   </nav>
+  <script>
+    /* === ESTADO + STORAGE === */
+    const STORAGE_KEY = 'bf_state_v1';
+
+    const defaultState = {
+      user: { nome: 'Visitante', perfil: 'aluno', tema: 'dark' },
+      sessions: [],
+      lessonProgress: {}
+    };
+
+    let state = loadState();
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return structuredClone(defaultState);
+        return { ...structuredClone(defaultState), ...JSON.parse(raw) };
+      } catch (e) {
+        console.warn('localStorage indisponível:', e);
+        return structuredClone(defaultState);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        console.warn('Não foi possível salvar:', e);
+      }
+    }
+
+    /* === TEMA === */
+    function applyTheme(tema) {
+      document.documentElement.setAttribute('data-theme', tema);
+      const btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = tema === 'dark' ? '🌙' : '☀️';
+      state.user.tema = tema;
+      saveState();
+    }
+
+    function initTheme() {
+      applyTheme(state.user.tema);
+      document.querySelector('.theme-toggle').addEventListener('click', () => {
+        applyTheme(state.user.tema === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    /* === ROTEAMENTO === */
+    const routes = {
+      '#/': () => renderHome(),
+      '#/tradutor': () => renderTradutor(),
+      '#/dicionario': () => renderDicionario(),
+      '#/aulas': () => renderAulas()
+    };
+
+    function router() {
+      const hash = location.hash || '#/';
+      const main = document.getElementById('app-main');
+      const renderer = routes[hash];
+      if (!renderer) {
+        main.innerHTML = '<p>Rota não encontrada.</p>';
+        return;
+      }
+      renderer();
+      // Atualiza bottom nav
+      document.querySelectorAll('#bottom-nav a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === hash);
+      });
+      window.scrollTo(0, 0);
+    }
+
+    function navigate(hash) {
+      if (location.hash === hash) {
+        router(); // re-renderiza se já está na rota
+      } else {
+        location.hash = hash;
+      }
+    }
+
+    /* === VIEW STUBS (preenchidos nas próximas tasks) === */
+    function renderHome() { document.getElementById('app-main').innerHTML = '<h1>Home</h1><p>Em construção.</p>'; }
+    function renderTradutor() { document.getElementById('app-main').innerHTML = '<h1>Tradutor</h1><p>Em construção.</p>'; }
+    function renderDicionario() { document.getElementById('app-main').innerHTML = '<h1>Dicionário</h1><p>Em construção.</p>'; }
+    function renderAulas() { document.getElementById('app-main').innerHTML = '<h1>Aulas</h1><p>Em construção.</p>'; }
+
+    /* === INIT === */
+    window.addEventListener('hashchange', router);
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      router();
+    });
+  </script>
 </body>
 </html>
