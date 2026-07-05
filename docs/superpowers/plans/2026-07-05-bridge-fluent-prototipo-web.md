@@ -1880,13 +1880,13 @@ Por:
 
 - [ ] **Step 3: Atualizar o roteador pra suportar `#/aulas/:id`**
 
-No bloco `routes` do JS, **substitua**:
+No bloco `routes` do JS, **substitua** a linha:
 
 ```js
       '#/aulas': () => renderAulas()
 ```
 
-Por:
+Por estas 7 linhas (substitui a linha antiga e adiciona 6 novas):
 
 ```js
       '#/aulas': () => renderAulas(),
