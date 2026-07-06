@@ -188,6 +188,38 @@
       }
     }
 
+/* === DADOS MOCK: SINAIS === */
+    const CATEGORIAS_SINAIS = ['Saudações', 'Família', 'Números', 'Cores', 'Sentimentos', 'Cotidiano'];
+
+    const SINAIS = [
+      // Saudações (3)
+      { id: 's1', termo: 'Olá', descricao: 'Saudação informal. Mão aberta próxima ao rosto, movimento de onda.', categoria: 'Saudações', exemplo: 'Use ao encontrar amigos casualmente.', icone: '👋' },
+      { id: 's2', termo: 'Bom dia', descricao: 'Saudação para o período matutino. Sinal de "bom" seguido de "dia".', categoria: 'Saudações', exemplo: 'Cumprimente colegas no início da aula.', icone: '🌅' },
+      { id: 's3', termo: 'Tchau', descricao: 'Despedida informal. Mão aberta acenando com os dedos.', categoria: 'Saudações', exemplo: 'Use ao se despedir de forma amigável.', icone: '👋' },
+      // Família (3)
+      { id: 's4', termo: 'Mãe', descricao: 'Polegar da mão dominante encosta no queixo.', categoria: 'Família', exemplo: 'Referir-se à figura materna.', icone: '👩' },
+      { id: 's5', termo: 'Pai', descricao: 'Polegar da mão dominante encosta na testa.', categoria: 'Família', exemplo: 'Referir-se à figura paterna.', icone: '👨' },
+      { id: 's6', termo: 'Irmão/Irmã', descricao: 'Indicador e polegar formam "L" encostando no peito.', categoria: 'Família', exemplo: 'Apresentar um irmão para alguém.', icone: '🧑' },
+      // Números (3)
+      { id: 's7', termo: 'Um', descricao: 'Indicador levantado, palma pra frente.', categoria: 'Números', exemplo: 'Contar ou indicar quantidade um.', icone: '1️⃣' },
+      { id: 's8', termo: 'Dois', descricao: 'Indicador e médio levantados em "V".', categoria: 'Números', exemplo: 'Indicar a quantidade dois.', icone: '2️⃣' },
+      { id: 's9', termo: 'Três', descricao: 'Indicador, médio e anelar levantados.', categoria: 'Números', exemplo: 'Mostrar a quantidade três.', icone: '3️⃣' },
+      // Cores (3)
+      { id: 's10', termo: 'Azul', descricao: 'Polegar indicador e médio juntos, balançando lateralmente.', categoria: 'Cores', exemplo: 'Descrever objetos azuis como o céu.', icone: '🔵' },
+      { id: 's11', termo: 'Amarelo', descricao: 'Mão em "Y" (polegar e mindinho), balança lateral.', categoria: 'Cores', exemplo: 'Apontar para o sol ou bananas.', icone: '🟡' },
+      { id: 's12', termo: 'Verde', descricao: 'Indicador e médio batem de leve no queixo.', categoria: 'Cores', exemplo: 'Referir-se a folhas ou grama.', icone: '🟢' },
+      // Sentimentos (3)
+      { id: 's13', termo: 'Feliz', descricao: 'Mãos abertas sobem pelo peito em direção ao rosto.', categoria: 'Sentimentos', exemplo: 'Expressar alegria ou satisfação.', icone: '😊' },
+      { id: 's14', termo: 'Triste', descricao: 'Indicadores sobem pelo rosto simulando lágrimas.', categoria: 'Sentimentos', exemplo: 'Expressar tristeza ou decepção.', icone: '😢' },
+      { id: 's15', termo: 'Cansado', descricao: 'Mãos abertas sobem pelo peito e "caem" em direção ao chão.', categoria: 'Sentimentos', exemplo: 'Dizer que precisa de descanso.', icone: '😴' },
+      // Cotidiano (5)
+      { id: 's16', termo: 'Obrigado', descricao: 'Mão aberta encosta no queixo e sai em direção à pessoa.', categoria: 'Cotidiano', exemplo: 'Agradecer por algo recebido.', icone: '🙏' },
+      { id: 's17', termo: 'Comer', descricao: 'Mão fechada em "O" vai em direção à boca repetidamente.', categoria: 'Cotidiano', exemplo: 'Indicar que vai se alimentar.', icone: '🍽️' },
+      { id: 's18', termo: 'Beber', descricao: 'Mão em "C" (curva) vai em direção à boca.', categoria: 'Cotidiano', exemplo: 'Pedir água ou se hidratar.', icone: '🥤' },
+      { id: 's19', termo: 'Estudar', descricao: 'Mão em "L" encosta na palma da outra mão e sobe.', categoria: 'Cotidiano', exemplo: 'Dizer que vai estudar ou aprender.', icone: '📚' },
+      { id: 's20', termo: 'Entender', descricao: 'Indicador sobe perto da têmpora e "abre" como chaveamento.', categoria: 'Cotidiano', exemplo: 'Confirmar que compreendeu algo.', icone: '💡' }
+    ];
+
     /* === TEMA === */
     function applyTheme(tema) {
       document.documentElement.setAttribute('data-theme', tema);
