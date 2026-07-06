@@ -96,7 +96,38 @@
       transition: color 0.2s;
     }
     #bottom-nav a:hover, #bottom-nav a.active { color: var(--accent); }
-    #bottom-nav .nav-icon { font-size: 22px; }
+    #bottom-nav .nav-icon { font-size: 22px; }    /* === TOASTS === */
+    #toast-container {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .toast {
+      background: var(--surface-elevated);
+      color: var(--text);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--accent);
+      font-size: 14px;
+      max-width: 90vw;
+      animation: toast-in 0.3s ease-out, toast-out 0.3s ease-in 2.7s forwards;
+    }
+    .toast.success { border-left-color: var(--success); }
+    .toast.error { border-left-color: var(--error); }
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes toast-out {
+      to { opacity: 0; transform: translateY(-20px); }
+    }
   </style>
 </head>
 <body>
@@ -107,6 +138,7 @@
   <main id="app-main">
     <!-- Views renderizadas aqui -->
   </main>
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
   <nav id="bottom-nav">
     <a href="#/" class="active" aria-label="Home">
       <span class="nav-icon">🏠</span>
@@ -210,6 +242,45 @@
     function renderDicionario() { document.getElementById('app-main').innerHTML = '<h1>Dicionário</h1><p>Em construção.</p>'; }
     function renderAulas() { document.getElementById('app-main').innerHTML = '<h1>Aulas</h1><p>Em construção.</p>'; }
 
+    /* === UTILITARIOS === */
+    function showToast(mensagem, tipo = 'info') {
+      const container = document.getElementById('toast-container');
+      if (!container) { console.warn('toast-container ausente'); return; }
+      const toast = document.createElement('div');
+      toast.className = `toast ${tipo}`;
+      toast.textContent = mensagem;
+      toast.setAttribute('role', 'status');
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    function formatDate(isoString) {
+      const date = new Date(isoString);
+      if (Number.isNaN(date.getTime())) return '';
+      const agora = new Date();
+      const diffMs = agora - date;
+      const diffMin = Math.floor(diffMs / 60000);
+      const diffHoras = Math.floor(diffMs / 3600000);
+      const diffDias = Math.floor(diffMs / 86400000);
+      if (diffMin < 1) return 'agora';
+      if (diffMin < 60) return `há ${diffMin} min`;
+      if (diffHoras < 24) return `há ${diffHoras} h`;
+      if (diffDias < 7) return `há ${diffDias} d`;
+      return date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+    }
+
+    function formatDuration(segundos) {
+      const total = Math.max(0, Math.floor(Number(segundos) || 0));
+      const min = Math.floor(total / 60);
+      const seg = total % 60;
+      if (min === 0) return `${seg}s`;
+      return `${min}min ${seg}s`;
+    }
+
+    function uid() {
+      return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+    }
+
     /* === INIT === */
     window.addEventListener('hashchange', router);
     window.addEventListener('DOMContentLoaded', () => {
@@ -219,3 +290,4 @@
   </script>
 </body>
 </html>
+
