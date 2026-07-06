@@ -220,6 +220,106 @@
       { id: 's20', termo: 'Entender', descricao: 'Indicador sobe perto da têmpora e "abre" como chaveamento.', categoria: 'Cotidiano', exemplo: 'Confirmar que compreendeu algo.', icone: '💡' }
     ];
 
+/* === DADOS MOCK: AULAS === */
+    const AULAS = [
+      {
+        id: 'a1',
+        titulo: 'Alfabeto Manual',
+        nivel: 'Iniciante',
+        descricao: 'Conheça as 26 letras do alfabeto em Libras, base para soletrar nomes e palavras.',
+        topicos: [
+          { titulo: 'O que é o alfabeto manual?', conteudo: 'O alfabeto manual (datilologia) é o conjunto de configurações de mão que representam cada letra do português. É essencial para soletrar nomes próprios, palavras sem sinal conhecido ou termos técnicos.' },
+          { titulo: 'Como praticar', conteudo: 'Comece com seu próprio nome. Soletre na frente do espelho. A repetição diária de 10 minutos já traz fluência em poucas semanas. Use apps de videochamada com amigos surdos para praticar em contexto real.' },
+          { titulo: 'Dicas importantes', conteudo: 'Mantenha a mão na altura do ombro, com a palma virada para frente. Velocidade moderada é mais importante que velocidade alta. Erre sem medo — a comunidade surda valoriza a tentativa.' }
+        ],
+        quiz: [
+          { pergunta: 'Para que serve o alfabeto manual?', opcoes: ['Substituir todos os sinais', 'Soletrar nomes e palavras sem sinal', 'Apenas escrever', 'Decorar letras'], correta: 1 },
+          { pergunta: 'Onde deve ficar a mão ao soletrar?', opcoes: ['No colo', 'Abaixo da cintura', 'Na altura do ombro', 'Atrás da cabeça'], correta: 2 },
+          { pergunta: 'Qual a melhor forma de praticar?', opcoes: ['Apenas ler sobre', 'Prática diária com repetição', 'Uma vez por mês', 'Só em provas'], correta: 1 }
+        ]
+      },
+      {
+        id: 'a2',
+        titulo: 'Cumprimentos Básicos',
+        nivel: 'Iniciante',
+        descricao: 'Aprenda a cumprimentar em Libras: Olá, Bom dia, Tudo bem, Prazer e Tchau.',
+        topicos: [
+          { titulo: 'Cumprimentos formais vs informais', conteudo: 'Em Libras, existem cumprimentos formais (usados com desconhecidos e pessoas mais velhas) e informais (entre amigos e familiares). A diferença está na intensidade do movimento e no uso de expressões faciais.' },
+          { titulo: 'Os 5 essenciais', conteudo: 'Olá 👋 (informal), Bom dia 🌅 (período matutino), Boa tarde ☀️ (período vespertino), Boa noite 🌙 (período noturno), Tchau 👋 (despedida).' },
+          { titulo: 'Expressões faciais', conteudo: 'As expressões faciais em Libras são gramaticais, não emocionais. Um cumprimento sem sorriso pode parecer frio ou rude, mesmo sendo correto na configuração de mão.' }
+        ],
+        quiz: [
+          { pergunta: 'Qual cumprimento usar de manhã?', opcoes: ['Boa noite', 'Olá', 'Bom dia', 'Tchau'], correta: 2 },
+          { pergunta: 'Por que as expressões faciais importam?', opcoes: ['Não importam', 'São gramaticais, não só emocionais', 'Só para teatro', 'Apenas formalidade'], correta: 1 },
+          { pergunta: 'Tchau é usado para:', opcoes: ['Iniciar conversa', 'Despedir-se', 'Apresentar-se', 'Agradecer'], correta: 1 }
+        ]
+      },
+      {
+        id: 'a3',
+        titulo: 'Verbos Essenciais',
+        nivel: 'Iniciante',
+        descricao: 'Os verbos mais usados no dia a dia: ir, vir, querer, poder, saber, entender.',
+        topicos: [
+          { titulo: 'Por que verbos primeiro?', conteudo: 'Com poucos verbos e muitos substantivos, você já consegue formar frases simples. Priorizar verbos essenciais acelera a comunicação real.' },
+          { titulo: 'Lista prioritária', conteudo: 'IR (movimento pra longe), VIR (movimento pra perto), QUERER (mãos em garra puxando pra si), PODER (mão aberta batendo na outra), SABER (pontas dos dedos na testa), ENTENDER (girar chave mental).' },
+          { titulo: 'Conjugação em Libras', conteudo: 'Diferente do português, Libras não conjuga verbos por tempo verbal (presente, passado, futuro). A noção temporal é dada pelo contexto da frase e por advérbios de tempo.' }
+        ],
+        quiz: [
+          { pergunta: 'Libras conjuga verbos em tempos verbais?', opcoes: ['Sim, como português', 'Não, usa contexto e advérbios', 'Só no presente', 'Só no passado'], correta: 1 },
+          { pergunta: 'O verbo IR é sinalizado com movimento para:', opcoes: ['Cima', 'Baixo', 'Longe', 'Perto'], correta: 2 },
+          { pergunta: 'Por que priorizar verbos essenciais?', opcoes: ['São mais fáceis', 'Permitem frases úteis com poucos sinais', 'Não há alternativa', 'É regra da escola'], correta: 1 }
+        ]
+      },
+      {
+        id: 'a4',
+        titulo: 'Estrutura Frasal',
+        nivel: 'Intermediário',
+        descricao: 'Como montar frases em Libras: ordem Sujeito-Objeto-Verbo e topicalização.',
+        topicos: [
+          { titulo: 'SOV: a ordem natural', conteudo: 'A estrutura mais comum em Libras é Sujeito-Objeto-Verbo. Exemplo: "EU MAÇÃ COMER" em vez de "Eu como maçã". Isso não é erro — é a gramática natural da língua.' },
+          { titulo: 'Topicalização', conteudo: 'Você pode colocar um tópico no início da frase para dar ênfase. "CARRO, MEU QUEBRAR" significa "o carro, o meu quebrou". O tópico é marcado com pausa e expressão facial.' },
+          { titulo: 'Perguntas sim/não', conteudo: 'Para perguntas de sim/não, levante as sobrancelhas no final da afirmação e incline levemente o corpo pra frente. Para perguntas com "quê/quem/quando", franze a testa.' }
+        ],
+        quiz: [
+          { pergunta: 'Qual a ordem frasal mais comum em Libras?', opcoes: ['SVO (como português)', 'SOV (Sujeito-Objeto-Verbo)', 'VSO', 'OSV'], correta: 1 },
+          { pergunta: 'Perguntas de sim/não exigem:', opcoes: ['Tom de voz agudo', 'Sobrancelhas levantadas', 'Punho cerrada', 'Aceno de cabeça'], correta: 1 },
+          { pergunta: 'Topicalização serve para:', opcoes: ['Acabar a frase', 'Dar ênfase a um tema', 'Substituir verbo', 'Apenas em entrevistas'], correta: 1 }
+        ]
+      },
+      {
+        id: 'a5',
+        titulo: 'Sinais do Cotidiano',
+        nivel: 'Intermediário',
+        descricao: 'Sinais práticos para o dia a dia: comer, beber, estudar, trabalhar, dormir.',
+        topicos: [
+          { titulo: 'Sinais icônicos', conteudo: 'Muitos sinais cotidianos são icônicos (imitam a ação). COMER lembra levar comida à boca. BEBER lembra segurar um copo. Isso facilita muito a memorização inicial.' },
+          { titulo: 'Sinais arbitrários', conteudo: 'Outros sinais não têm ligação visual com o significado. ESTUDAR, por exemplo, não imita "estudar". Aí a memorização exige repetição e uso em contexto.' },
+          { titulo: 'Criando rotina de prática', conteudo: 'Associe sinais a ações do seu dia. Ao acordar, sinalize BOM DIA. Ao comer, sinalize COMER. Isso fixa o vocabulário muito mais rápido que estudar isoladamente.' }
+        ],
+        quiz: [
+          { pergunta: 'Sinais icônicos facilitam a memorização porque:', opcoes: ['São mais bonitos', 'Imitam a ação real', 'São mais curtos', 'Não têm regra'], correta: 1 },
+          { pergunta: 'Qual é uma boa estratégia de prática?', opcoes: ['Estudar 5h só no fim de semana', 'Associar sinais a ações do dia', 'Memorizar lista e nunca usar', 'Assistir sem praticar'], correta: 1 },
+          { pergunta: 'BEBER é sinal:', opcoes: ['Arbitrário', 'Icônico (imita copo)', 'Numérico', 'Sem categoria'], correta: 1 }
+        ]
+      },
+      {
+        id: 'a6',
+        titulo: 'Cultura Surda',
+        nivel: 'Avançado',
+        descricao: 'Compreenda a comunidade surda, sua história, identidade e etiqueta.',
+        topicos: [
+          { titulo: 'Surdo x Deficiente Auditivo', conteudo: '"Surdo" (S maiúsculo conceitual) refere-se à identidade cultural e linguística. "deficiente auditivo" é o termo clínico. A preferência varia, mas a comunidade geralmente prefere "surdo" ao falar de si e da cultura.' },
+          { titulo: 'História da Libras', conteudo: 'A Libras foi oficialmente reconhecida no Brasil pela Lei 10.436/2002. Tem origem na Língua de Sinais Francesa (LSF), trazida por Thomas Hull e Eduard Huet em 1856, mas se desenvolveu independentemente no contexto brasileiro.' },
+          { titulo: 'Etiqueta essencial', conteudo: 'Em conversas em grupo, mantenha-se visível. Não fale enquanto outra pessoa está sinalizando. Ao chegar, cumprimente todas as pessoas. Atenção visual é a base da comunicação — não vire as costas.' }
+        ],
+        quiz: [
+          { pergunta: 'Qual lei reconheceu oficialmente a Libras?', opcoes: ['Lei 9.394/96', 'Lei 10.436/2002', 'Lei 8.069/90', 'Lei 13.146/15'], correta: 1 },
+          { pergunta: 'A preferência da comunidade é:', opcoes: ['Deficiente auditivo sempre', 'Surdo (identidade cultural)', 'Ambos são iguais', 'Apenas surdo profundo'], correta: 1 },
+          { pergunta: 'Em conversa em grupo, deve-se:', opcoes: ['Falar por cima', 'Manter visibilidade e atenção visual', 'Sussurrar', 'Ficar de costas'], correta: 1 }
+        ]
+      }
+    ];
+
     /* === TEMA === */
     function applyTheme(tema) {
       document.documentElement.setAttribute('data-theme', tema);
