@@ -96,7 +96,283 @@
       transition: color 0.2s;
     }
     #bottom-nav a:hover, #bottom-nav a.active { color: var(--accent); }
-    #bottom-nav .nav-icon { font-size: 22px; }    /* === TOASTS === */
+    #bottom-nav .nav-icon { font-size: 22px; }/* === VIEW: HOME === */
+    .home-hero {
+      text-align: center;
+      padding: 20px 0 30px;
+    }
+    .home-hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .home-hero p {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      margin-bottom: 24px;
+    }
+    .search-bar input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 15px;
+      font-family: inherit;
+    }
+    .search-bar input::placeholder { color: var(--text-muted); }
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .action-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .action-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .action-card .card-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .action-card .card-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .action-card .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    /* === VIEW: TRADUTOR === */
+    .tradutor-hero {
+      text-align: center;
+      padding: 20px 0 16px;
+    }
+    .tradutor-hero h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .tradutor-hero p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .mic-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .mic-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--border);
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .mic-btn.recording {
+      border-color: var(--error);
+      background: rgba(239, 68, 68, 0.15);
+      animation: pulse-mic 1.2s infinite;
+    }
+    .mic-btn.recording::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid var(--error);
+      animation: pulse-ring 1.2s infinite;
+    }
+    @keyframes pulse-mic {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+    @keyframes pulse-ring {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.4); }
+    }
+    .mic-label {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .mic-label.recording { color: var(--error); font-weight: 600; }
+    .transcript-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-height: 60px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: var(--text);
+      position: relative;
+    }
+    .transcript-box .placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .transcript-box .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 18px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      background: var(--surface-elevated);
+    }
+    .transcript-box .copy-btn:hover { background: var(--accent); color: #000; }
+    .manual-input {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .manual-input input {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 15px;
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+    }
+    .manual-input input:focus { border-color: var(--accent); }
+    .manual-input input::placeholder { color: var(--text-muted); }
+    .manual-input button {
+      background: var(--accent);
+      color: #000;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .manual-input button:hover { background: var(--accent-hover); }
+    .sinais-encontrados {
+      margin-bottom: 24px;
+    }
+    .sinais-encontrados h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+    .sinal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .sinal-card:hover { border-color: var(--accent); }
+    .sinal-card .sinal-icone {
+      font-size: 32px;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-elevated);
+      border-radius: 12px;
+    }
+    .sinal-card .sinal-info { flex: 1; }
+    .sinal-card .sinal-termo {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .sinal-card .sinal-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .sinal-card .sinal-categoria {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--surface-elevated);
+      color: var(--accent);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .historico-section h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+    .historico-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .historico-item:hover { border-color: var(--accent); }
+    .historico-item .hist-texto {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .historico-item .hist-tempo {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .historico-item .hist-qtd {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .not-supported {
+      text-align: center;
+      padding: 20px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+      margin-bottom: 20px;
+    }
+    .not-supported p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    /* === TOASTS === */
     #toast-container {
       position: fixed;
       top: 80px;
@@ -368,9 +644,374 @@
       }
     }
 
-    /* === VIEW STUBS (preenchidos nas próximas tasks) === */
-    function renderHome() { document.getElementById('app-main').innerHTML = '<h1>Home</h1><p>Em construção.</p>'; }
-    function renderTradutor() { document.getElementById('app-main').innerHTML = '<h1>Tradutor</h1><p>Em construção.</p>'; }
+    /* === UTILS === */
+    function normalizeText(str) {
+      return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    /* === VIEW: HOME === */
+    function renderHome() {
+      const hora = new Date().getHours();
+      let saudacao = 'Olá';
+      if (hora < 12) saudacao = 'Bom dia';
+      else if (hora < 18) saudacao = 'Boa tarde';
+      else saudacao = 'Boa noite';
+
+      const main = document.getElementById('app-main');
+      main.innerHTML = `
+        <section class="home-hero">
+          <h1>${saudacao}, ${escapeHtml(state.user.nome)}!</h1>
+          <p>O que você quer aprender hoje?</p>
+        </section>
+        <div class="search-bar">
+          <span aria-hidden="true">🔍</span>
+          <input type="search" id="home-search" placeholder="Buscar sinais, aulas ou sessões..." aria-label="Busca global">
+        </div>
+        <div class="quick-actions">
+          <button class="action-card" data-route="#/tradutor">
+            <span class="card-icon" aria-hidden="true">🎤</span>
+            <div class="card-title">Traduzir Agora</div>
+            <div class="card-desc">Voz para texto em tempo real</div>
+          </button>
+          <button class="action-card" data-route="#/dicionario">
+            <span class="card-icon" aria-hidden="true">📖</span>
+            <div class="card-title">Dicionário</div>
+            <div class="card-desc">20 sinais essenciais</div>
+          </button>
+          <button class="action-card" data-route="#/aulas">
+            <span class="card-icon" aria-hidden="true">🎓</span>
+            <div class="card-title">Aulas Acessíveis</div>
+            <div class="card-desc">Aprenda no seu ritmo</div>
+          </button>
+          <button class="action-card" data-route="#/aulas">
+            <span class="card-icon" aria-hidden="true">🌟</span>
+            <div class="card-title">Cultura Surda</div>
+            <div class="card-desc">Conheça a comunidade</div>
+          </button>
+        </div>
+      `;
+
+      main.querySelectorAll('.action-card').forEach(card => {
+        card.addEventListener('click', () => navigate(card.dataset.route));
+      });
+
+      const search = document.getElementById('home-search');
+      search.addEventListener('keypress', e => {
+        if (e.key === 'Enter' && search.value.trim()) {
+          performGlobalSearch(search.value.trim());
+        }
+      });
+    }
+
+    function performGlobalSearch(query) {
+      const q = query.toLowerCase();
+      const sinaisMatch = SINAIS.filter(s =>
+        s.termo.toLowerCase().includes(q) ||
+        s.descricao.toLowerCase().includes(q) ||
+        s.categoria.toLowerCase().includes(q)
+      );
+      const aulasMatch = AULAS.filter(a =>
+        a.titulo.toLowerCase().includes(q) ||
+        a.descricao.toLowerCase().includes(q)
+      );
+      if (sinaisMatch.length > 0) {
+        navigate('#/dicionario');
+        setTimeout(() => {
+          const input = document.getElementById('dict-search');
+          if (input) {
+            input.value = query;
+            input.dispatchEvent(new Event('input'));
+          }
+        }, 100);
+      } else if (aulasMatch.length > 0) {
+        navigate('#/aulas');
+      } else {
+        showToast(`Nada encontrado para "${query}"`, 'error');
+      }
+    }
+
+    /* === VIEW: TRADUTOR === */
+    let tradutorState = {
+      recognizing: false,
+      recognition: null,
+      transcript: '',
+      historico: state.sessions.filter(s => s.type === 'tradutor').slice(0, 20)
+    };
+
+    function initSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return null;
+      const rec = new SpeechRecognition();
+      rec.lang = 'pt-BR';
+      rec.continuous = false;
+      rec.interimResults = true;
+      rec.maxAlternatives = 1;
+      return rec;
+    }
+
+    function renderTradutor() {
+      // Cleanup previous recognition instance
+      if (tradutorState.recognition) {
+        try { tradutorState.recognition.abort(); } catch(e) {}
+        tradutorState.recognition = null;
+        tradutorState.recognizing = false;
+      }
+
+      const main = document.getElementById('app-main');
+      const supported = !! (window.SpeechRecognition || window.webkitSpeechRecognition);
+
+      main.innerHTML = `
+        <section class="tradutor-hero">
+          <h1>Tradutor de Voz</h1>
+          <p>Fale em português e encontre o sinal em Libras correspondente</p>
+        </section>
+        ${!supported ? '<div class="not-supported"><p>Reconhecimento de voz não suportado neste navegador.<br>Use Chrome ou Edge no desktop, ou digite o texto manualmente abaixo.</p></div>' : ''}
+        <div class="mic-area">
+          <button class="mic-btn" id="mic-btn" aria-label="Iniciar gravação">
+            🎤
+          </button>
+          <span class="mic-label" id="mic-label">Toque para falar</span>
+        </div>
+        <div class="transcript-box" id="transcript-box">
+          <span class="placeholder">Aguardando fala...</span>
+        </div>
+        <div class="manual-input">
+          <input type="text" id="manual-text" placeholder="Ou digite aqui..." aria-label="Digite texto para traduzir">
+          <button id="btn-traduzir">Traduzir</button>
+        </div>
+        <div class="sinais-encontrados" id="sinais-encontrados"></div>
+        <div class="historico-section" id="historico-section"></div>
+      `;
+
+      // Renderiza histórico
+      renderHistorico();
+
+      if (!supported) {
+        // Só liga input manual
+        setupManualInput();
+        return;
+      }
+
+      const micBtn = document.getElementById('mic-btn');
+      const micLabel = document.getElementById('mic-label');
+      const rec = initSpeechRecognition();
+      tradutorState.recognition = rec;
+
+      if (rec) {
+        rec.onresult = (event) => {
+          let interimTranscript = '';
+          let finalTranscript = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const t = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              finalTranscript += t;
+            } else {
+              interimTranscript += t;
+            }
+          }
+          tradutorState.transcript = finalTranscript || interimTranscript;
+          updateTranscript(tradutorState.transcript, !!finalTranscript);
+
+          if (finalTranscript) {
+            tradutorState.recognizing = false;
+            micBtn.classList.remove('recording');
+            micLabel.textContent = 'Toque para falar';
+            micLabel.classList.remove('recording');
+            processTranscript(finalTranscript.trim());
+          }
+        };
+
+        rec.onerror = (event) => {
+          console.warn('Speech error:', event.error);
+          tradutorState.recognizing = false;
+          micBtn.classList.remove('recording');
+          micLabel.textContent = 'Toque para falar';
+          micLabel.classList.remove('recording');
+          if (event.error === 'not-allowed') {
+            showToast('Permissão de microfone negada. Verifique as configurações do navegador.', 'error');
+          } else if (event.error !== 'aborted') {
+            showToast('Erro no reconhecimento: ' + event.error, 'error');
+          }
+        };
+
+        rec.onend = () => {
+          tradutorState.recognizing = false;
+          micBtn.classList.remove('recording');
+          micLabel.textContent = 'Toque para falar';
+          micLabel.classList.remove('recording');
+        };
+
+        micBtn.addEventListener('click', () => {
+          if (tradutorState.recognizing) {
+            rec.stop();
+          } else {
+            rec.start();
+            tradutorState.recognizing = true;
+            micBtn.classList.add('recording');
+            micLabel.textContent = 'Ouvindo...';
+            micLabel.classList.add('recording');
+            tradutorState.transcript = '';
+            updateTranscript('', false);
+          }
+        });
+      }
+
+      setupManualInput();
+    }
+
+    function setupManualInput() {
+      const input = document.getElementById('manual-text');
+      const btn = document.getElementById('btn-traduzir');
+      if (!input || !btn) return;
+
+      const doTranslate = () => {
+        const texto = input.value.trim();
+        if (texto) {
+          tradutorState.transcript = texto;
+          updateTranscript(texto, true);
+          processTranscript(texto);
+          input.value = '';
+        }
+      };
+
+      btn.addEventListener('click', doTranslate);
+      input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') doTranslate();
+      });
+    }
+
+    function updateTranscript(text, isFinal) {
+      const box = document.getElementById('transcript-box');
+      if (!box) return;
+      if (!text) {
+        box.innerHTML = '<span class="placeholder">Aguardando fala...</span>';
+        return;
+      }
+      box.innerHTML = `
+        <span>${escapeHtml(text)}</span>
+        <button class="copy-btn" title="Copiar texto" aria-label="Copiar">📋</button>
+      `;
+      box.querySelector('.copy-btn').addEventListener('click', () => {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('Texto copiado!', 'success');
+        }).catch(() => {
+          showToast('Erro ao copiar', 'error');
+        });
+      });
+    }
+
+    function processTranscript(texto) {
+      const q = normalizeText(texto);
+      const words = q.split(/\s+/).filter(w => w.length > 2);
+      const matchIds = new Set();
+      const results = [];
+
+      // Busca exata primeiro
+      SINAIS.forEach(s => {
+        const termoNorm = normalizeText(s.termo);
+        if (q.includes(termoNorm) && !matchIds.has(s.id)) {
+          results.unshift(s);
+          matchIds.add(s.id);
+        }
+      });
+
+      // Busca por palavras
+      if (results.length === 0) {
+        words.forEach(w => {
+          SINAIS.forEach(s => {
+            if (matchIds.has(s.id)) return;
+            const termoNorm = normalizeText(s.termo);
+            const descNorm = normalizeText(s.descricao);
+            if (termoNorm.includes(w) || w.includes(termoNorm) || descNorm.includes(w)) {
+              results.push(s);
+              matchIds.add(s.id);
+            }
+          });
+        });
+      }
+
+      renderSinaisEncontrados(texto, results);
+
+      // Salva no histórico (in-memory + persistência)
+      if (texto.trim()) {
+        const entry = {
+          id: uid(),
+          type: 'tradutor',
+          texto: texto.trim(),
+          timestamp: new Date().toISOString(),
+          qtdSinais: results.length
+        };
+        tradutorState.historico.unshift(entry);
+        if (tradutorState.historico.length > 20) tradutorState.historico.pop();
+        state.sessions.unshift(entry);
+        if (state.sessions.length > 50) state.sessions.length = 50;
+        saveState();
+        renderHistorico();
+      }
+    }
+
+    function renderSinaisEncontrados(texto, sinais) {
+      const container = document.getElementById('sinais-encontrados');
+      if (!container) return;
+
+      if (sinais.length === 0) {
+        container.innerHTML = `
+          <h2>Sinais encontrados</h2>
+          <div class="not-supported">
+            <p>Nenhum sinal encontrado para "${escapeHtml(texto)}".<br>Tente palavras como: olá, obrigado, comer, feliz, azul...</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <h2>Sinais encontrados (${sinais.length})</h2>
+        ${sinais.map(s => `
+          <div class="sinal-card">
+            <div class="sinal-icone">${s.icone}</div>
+            <div class="sinal-info">
+              <div class="sinal-termo">${escapeHtml(s.termo)}</div>
+              <div class="sinal-desc">${escapeHtml(s.descricao)}</div>
+              <div class="sinal-categoria">${escapeHtml(s.categoria)}</div>
+            </div>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    function renderHistorico() {
+      const container = document.getElementById('historico-section');
+      if (!container) return;
+
+      // Use only tradutorState.historico to avoid duplicates
+      const hist = tradutorState.historico;
+
+      if (hist.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = `
+        <h2>Traduções recentes</h2>
+        ${hist.map(h => `
+          <div class="historico-item" data-texto="${escapeHtml(h.texto)}">
+            <span class="hist-texto">${escapeHtml(h.texto)}</span>
+            <span class="hist-qtd">${h.qtdSinais || 0} sinais</span>
+            <span class="hist-tempo">${formatDate(h.timestamp)}</span>
+          </div>
+        `).join('')}
+      `;
+
+      container.querySelectorAll('.historico-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const texto = item.dataset.texto;
+          tradutorState.transcript = texto;
+          updateTranscript(texto, true);
+          processTranscript(texto);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }
     function renderDicionario() { document.getElementById('app-main').innerHTML = '<h1>Dicionário</h1><p>Em construção.</p>'; }
     function renderAulas() { document.getElementById('app-main').innerHTML = '<h1>Aulas</h1><p>Em construção.</p>'; }
 
@@ -407,6 +1048,12 @@
       const seg = total % 60;
       if (min === 0) return `${seg}s`;
       return `${min}min ${seg}s`;
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = String(str ?? '');
+      return div.innerHTML;
     }
 
     function uid() {
