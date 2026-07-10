@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bridge Fluent — Tradução e aprendizado inclusivo com IA">
   <title>Bridge Fluent</title>
+  <!-- VLibras Widget — Tradução automática de texto para Libras (Governo Federal) -->
+  <meta name="vlibras" content="yes">
   <style>
     /* === CSS VARIABLES === */
     :root[data-theme="dark"] {
@@ -414,6 +416,13 @@
   <main id="app-main">
     <!-- Views renderizadas aqui -->
   </main>
+  <!-- VLibras Widget Container -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
   <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
   <nav id="bottom-nav">
     <a href="#/" class="active" aria-label="Home">
@@ -1066,6 +1075,11 @@
       initTheme();
       router();
     });
+  </script>
+  <!-- VLibras Widget Script — CDN oficial do Governo Federal -->
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
 </body>
 </html>
